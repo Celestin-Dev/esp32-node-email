@@ -11,7 +11,7 @@ app.use(cors());
 
 const PORT = process.env.PORT;
 
-// Transporter sécurisé (utiliser des variables d'environnement)
+// // Transporter sécurisé (utiliser des variables d'environnement)
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587, 
@@ -34,6 +34,8 @@ const pool = mysql.createPool({
 // Route pour insérer des données et envoyer un email
 app.post('/temperature-humidite', async (req, res) => {
   const { humidity, temperature } = req.body;
+  console.log(humidity);
+  
   if (!humidity || !temperature) {
     return res.status(400).json({ error: "Données invalides" });
   }
@@ -46,7 +48,7 @@ app.post('/temperature-humidite', async (req, res) => {
       return res.status(500).json({ error: "Erreur lors de l'insertion" });
     }
 
-    // Préparation de l'email
+    // // Préparation de l'email
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: 'nomenjanaharycelestin33@gmail.com',

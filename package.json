@@ -1,7 +1,7 @@
 {
   "name": "server-whatsapp-bot",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +19,7 @@
     "mailslurp-client": "^15.21.0",
     "mysql": "^2.18.1",
     "nodemailer": "^6.10.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "server-whatsapp-bot": "file:"
   }
 }
